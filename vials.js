@@ -36,7 +36,6 @@ console.log(solve(newVials, vialDepth, 0.3))
             else if there's another vial that can be added to: add new state and steps to next recurse
     3. recurse
 */
-
 function solve(initialVials, vialDepth, sample) {
 
     const win = recurser([initialVials], [[]], vialDepth, 0, 0);
@@ -100,15 +99,15 @@ function solve(initialVials, vialDepth, sample) {
                             }
     
                             if(Math.random() > (1 - sample)) {
-                            // update state and steps
-                            stateToAdd = [...state];
-                            stateToAdd[outVialIndex] = outVialIfPoured;
-                            stateToAdd[inVialIndex] = inVialIfPoured;
-                            newStates.push(stateToAdd);
-    
-                            stepToAdd = [...steps[stateIndex]];
-                            stepToAdd.push([currColor, outVialIndex, inVialIndex]);
-                            newSteps.push(stepToAdd);
+                                // update state and steps
+                                stateToAdd = [...state];
+                                stateToAdd[outVialIndex] = outVialIfPoured;
+                                stateToAdd[inVialIndex] = inVialIfPoured;
+                                newStates.push(stateToAdd);
+        
+                                stepToAdd = [...steps[stateIndex]];
+                                stepToAdd.push([currColor, outVialIndex, inVialIndex]);
+                                newSteps.push(stepToAdd);
                             } else {
                                 statesSkipped++
                             }
